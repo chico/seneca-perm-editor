@@ -21,8 +21,13 @@
     return def;
   });
 
-  senecaPermEditorModule.controller("senecaPermEditorCtrl", ["$scope", "$rootScope", function($scope, $rootScope) {
-    $scope.show_main = true
+  senecaPermEditorModule.controller("senecaPermEditorCtrl", ["$scope", "$rootScope", "$http", function($scope, $rootScope, $http) {
+
+    $http({method: 'GET', url: prefix + '/rest/sys_user?admin=1', cache: false}).success(function(data, status) {
+      $scope.users = data.list;
+      $scope.show_main = true;
+    });
+
   }]);
 
 }(window, angular));
