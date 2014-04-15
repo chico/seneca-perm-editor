@@ -1,5 +1,33 @@
 <div ng-controller="senecaPermEditorCtrl" ng-show="show_main" class="seneca-perm-editor-main">
 
-    HELLO
+  <div class="row" ng-cloak>
+
+    <form class="form-horizontal" role="form">
+
+      <div ng-repeat="user in users" class="control-group">
+
+        <div class="form-group" ng-show="user.email">
+          <label class="col-sm-3 control-label">{{user.email}}</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" style="width:350px" ng-model="roles[user.email]"></input>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group msg">
+        <div class="col-sm-offset-3 col-sm-6">
+          <div ng-show="''!=msg" style="color: red;">{{msg}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+          <button ng-click="save()" class="btn">Save</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
 
 </div>
