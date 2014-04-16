@@ -25,7 +25,7 @@
 
     $scope.msg = '';
 
-    $http({method: 'GET', url: prefix + '/rest/sys_user?admin=1', cache: false}).success(function(data, status) {
+    $http({method: 'GET', url: prefix + '/rest/sys_user?admin=true', cache: false}).success(function(data, status) {
       $scope.users = data.list;
       $scope.roles = [];
       for(var i = 0; i < $scope.users.length; i++) {
