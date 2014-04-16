@@ -1,6 +1,6 @@
 {
   "name": "seneca-perm-editor",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Seneca permissions and roles editor plugin",
   "main": "lib/perm-editor.js",
   "scripts": {
