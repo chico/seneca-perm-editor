@@ -16,7 +16,8 @@
 
       <div class="form-group msg">
         <div class="col-sm-offset-3 col-sm-6">
-          <div ng-show="''!=msg" style="color: red;">{{msg}}</div>
+          <div ng-show="''!=msg && ''==errormsg" style="color: green;">{{msg}}</div>
+          <div ng-show="''!=errormsg" style="color: red;">{{errormsg}}</div>
         </div>
       </div>
 

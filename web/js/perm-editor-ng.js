@@ -24,6 +24,7 @@
   senecaPermEditorModule.controller("senecaPermEditorCtrl", ["$scope", "$rootScope", "$http", function($scope, $rootScope, $http) {
 
     $scope.msg = '';
+    $scope.errormsg = '';
 
     $http({method: 'GET', url: prefix + '/rest/sys_user?admin=true', cache: false}).success(function(data, status) {
       $scope.users = data.list;
@@ -46,8 +47,11 @@
 
         var idpart = '/' + $scope.users[i].id;
         $http({method: 'POST', url: prefix + '/rest/sys_user' +  idpart, data:$scope.users[i], cache: false}).success(function(data, status) {
-          if (status != 200) {
-            $scope.msg = "Save failed";
+          if (status === 200 && $scope.errormsg === '') {
+            $scope.msg = 'Save successful';
+          }
+          else {
+            $scope.errormsg = 'Save failed';
           }
         });
 
@@ -57,4 +61,3 @@
   }]);
 
 }(window, angular));
-
