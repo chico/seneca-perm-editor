@@ -35,7 +35,10 @@
   },
   "devDependencies": {
     "seneca": "0.5.x",
+    "seneca-user": "0.2.x",
+    "seneca-auth": "0.2.x",
     "seneca-perm": "0.1.x",
+    "seneca-jsonrest-api": "0.2.x",
     "connect": "2.12.x",
     "express": "3.4.x",
     "mocha": "1.17.x",
